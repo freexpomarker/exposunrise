@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scraped Data Display</title>
+</head>
+<body>
+    <h1>Scraped Data from Another Site</h1>
+    <div id="data-container"></div>
+
+    <script>
+        fetch('http://localhost:5000/get-data')  // Update this URL if hosted online
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('data-container');
+                data.forEach(text => {
+                    const p = document.createElement('p');
+                    p.textContent = text;
+                    container.appendChild(p);
+                });
+            })
+            .catch(err => console.error('Failed to fetch data:', err));
+    </script>
+</body>
+</html>
