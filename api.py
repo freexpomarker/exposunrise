@@ -9,5 +9,5 @@ def get_data():
         data = json.load(f)
     return jsonify(data)
 
-if __name__ == '__main__':
+if __name__ == '_index_':
     app.run(debug=True, port=5000)
